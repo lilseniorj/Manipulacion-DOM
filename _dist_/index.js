@@ -1,5 +1,11 @@
 const baseUrl = "https://platzi-avo.vercel.app";
-const mountNode = document.getElementById("js-mount");
+const appNode = document.querySelector('#app')
+
+appNode.addEventListener('click', (event) => {
+  if(event.target.nodeName === 'H2') {
+    window.alert('Hola');
+  }
+});
 
 const formatPrice = (price) =>
   new Intl.NumberFormat("en-EN", {
@@ -52,5 +58,5 @@ const formatPrice = (price) =>
   });
 
   // Trick: Apply an array as a list of arguments
-  mountNode.append(...nodeArray);
+  appNode.append(...nodeArray);
 })();
